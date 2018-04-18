@@ -13,6 +13,7 @@
         android:layout_marginBottom="2dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
+        android:background="@android:color/holo_blue_dark"
         android:text="Translate"
         app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -21,7 +22,6 @@
         android:id="@+id/textInputLayout"
         android:layout_width="264dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
         android:background="@android:color/transparent"
@@ -34,5 +34,16 @@
             android:background="@android:color/background_light"
             android:hint="What will master Yoda say?" />
     </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_dark"
+        android:cropToPadding="false"
+        android:translationZ=""
+        app:srcCompat="@drawable/Yoda_SWSB"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>
