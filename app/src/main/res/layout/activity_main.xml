@@ -10,30 +10,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         android:background="@android:color/holo_blue_dark"
         android:text="Translate"
-        app:layout_constraintBottom_toBottomOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="264dp"
-        android:layout_height="60dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@android:color/background_light"
-            android:hint="What will master Yoda say?" />
-    </android.support.design.widget.TextInputLayout>
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="461dp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -45,5 +27,28 @@
         app:srcCompat="@drawable/Yoda_SWSB"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="310dp"
+        android:layout_height="128dp"
+        android:text='"Great, this project is."'
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="303dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="235dp"
+        android:layout_height="65dp"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="461dp">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Type here"
+            android:textColor="@android:color/background_light" />
+    </android.support.design.widget.TextInputLayout>
 
 </android.support.constraint.ConstraintLayout>
