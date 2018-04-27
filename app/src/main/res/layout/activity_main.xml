@@ -23,8 +23,7 @@
         android:layout_height="wrap_content"
         android:background="@android:color/background_dark"
         android:cropToPadding="false"
-        android:translationZ=""
-        app:srcCompat="@drawable/Yoda_SWSB"
+        app:srcCompat="@drawable/yoda"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
 
