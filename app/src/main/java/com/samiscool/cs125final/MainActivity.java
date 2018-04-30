@@ -26,12 +26,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //alternate method for button in case first does not work
+        //         final Button button = findViewById(R.id.button_id);
+        //         button.setOnClickListener(new View.OnClickListener() {
+        //             public void onClick(View v) {
+        //                 // Code here executes on main thread after user presses button
+        //                          callAPI(userInput);
+        //             }
+        //         });
     }
     public void buttonOnClick(View v) {
         // Code here executes on main thread after user presses button
         callAPI(userInput);
     }
-
+    Button button = (Button) findViewById(R.id.button_send);
+    button.setOnClickListener(new View.OnClickListener() {
+        public void onClick(View v) {
+            // Do something in response to button click
+        }
+    });
     /**
      * This function sends user input data to the API and then calls the JSON Parser.
      * This function should be called when the 'Translate' button is pressed.
