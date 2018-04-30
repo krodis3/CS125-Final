@@ -66,17 +66,20 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url ="http://api.funtranslations.com/translate/yoda.json?text=" + toTranslate;
         Log.d(TAG, "callAPI: using url: " + url);
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         Log.d(TAG, "onResponse: Received Response!");
                         Log.d(TAG, "onResponse: " + response);
+                        translate(response);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.e(TAG, "onErrorResponse: Error returning data or request limit exceeded.");
+                TextView textView = findViewById(R.id.textView);
+                textView.setText("Exceeded the request limit, you have.");
             }
         });
         queue.add(stringRequest);
