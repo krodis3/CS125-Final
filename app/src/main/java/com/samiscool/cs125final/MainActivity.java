@@ -10,6 +10,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+    public void buttonOnClick(View v) {
+        // Code here executes on main thread after user presses button
+        callAPI(userInput);
     }
 
     /**
@@ -73,4 +79,6 @@ public class MainActivity extends AppCompatActivity {
         JsonParser parser = new JsonParser();
         return parser.parse(json).getAsJsonObject();
     }
+
+
 }
