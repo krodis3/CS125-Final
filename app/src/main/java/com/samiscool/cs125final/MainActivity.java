@@ -1,5 +1,7 @@
 package com.samiscool.cs125final;
 
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,8 +12,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,14 +44,17 @@ public class MainActivity extends AppCompatActivity {
     }
     public void buttonOnClick(View v) {
         // Code here executes on main thread after user presses button
-        callAPI(userInput);
+        //I added this as an experiment
+        EditText userInput = findViewById(R.id.userWords);
+        String toTranslate = userInput.getText().toString();
+        callAPI(toTranslate);
     }
-    Button button = (Button) findViewById(R.id.button_send);
+    // I had to comment this out because it broke the code below
+    /*Button button = (Button) findViewById(R.id.button_send);
     button.setOnClickListener(new View.OnClickListener() {
         public void onClick(View v) {
             // Do something in response to button click
-        }
-    });
+        }*/
     /**
      * This function sends user input data to the API and then calls the JSON Parser.
      * This function should be called when the 'Translate' button is pressed.
@@ -78,7 +88,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void translate(final String json) {
         String translation = getObj(json).get("contents").getAsJsonObject().get("translation").getAsString();
-        //Set textView = translation
+        TextView textView = findViewById(R.id.textView);
+        textView.setText(translation);
     }
 
     /**
